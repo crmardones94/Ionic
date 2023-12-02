@@ -1,0 +1,22 @@
+<app-header backButton="/home" title="Perfil"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-avatar>
+    <img [src]="user()?.image" />
+  </ion-avatar>
+
+  <div style="width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <ion-button (click)="TakeImage()" size="small" mode="ios" shape="round" style="position: relative; bottom: 25px; display: flex; width: 30%; justify-content: center; align-items: center;">
+    <ion-icon name="camera-outline"></ion-icon>
+  </ion-button>
+  <h2 style="text-transform: capitalize;">{{user().name}}</h2>
+  <h2 style="text-transform: capitalize;">{{user().email}}</h2>
+  <ion-button (click)="signOut()" expand="block" fill="clear" shape="round">
+    Cerrar Sesion
+  </ion-button>
+</div>
+
+
+
+</ion-content>

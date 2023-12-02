@@ -1,0 +1,41 @@
+<app-header backButton="/auth" title="Registro"></app-header>
+
+<ion-content>
+
+  <div class="title-app" style="display: flex; align-items: center; justify-content: center;">
+    <h1 style="text-shadow: 1px;">Registro Usuario</h1>
+  </div>
+
+  <div class="d-flex-center">
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+      <app-custom-input
+      class="ion-margin-top"
+        autocomplete="name"
+        [control]="form.controls.name"
+        type="text"
+        label="Nombre"
+      ></app-custom-input>
+
+
+      <app-custom-input
+      class="ion-margin-top"
+        autocomplete="email"
+        [control]="form.controls.email"
+        type="email"
+        label="Correo"
+      ></app-custom-input>
+
+      <app-custom-input
+      class="ion-margin-top"
+        [control]="form.controls.password"
+        type="password"
+        label="Contraseña"
+      ></app-custom-input>
+
+      <ion-button class="ion-margin-top" expand="block" class="submit" type="submit" [disabled]="form.invalid">
+        Registrar
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

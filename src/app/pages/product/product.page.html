@@ -1,0 +1,63 @@
+<app-header backButton="/home" title="Agregar Producto"></app-header>
+
+<ion-content>
+
+  <div class="title-app" style="display: flex; align-items: center; justify-content: center;">
+    <h1 style="text-shadow: 1px;">Registrar Producto</h1>
+  </div>
+    <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+      <ion-avatar *ngIf="form.value.image">
+        <img [src]="form.value.image" />
+      </ion-avatar>
+
+
+      <ion-button (click)="TakeImage()" size="small" shape="round">
+        Agregar Foto
+      </ion-button>
+
+      <app-custom-input
+      class="ion-margin-top"
+        autocomplete="name"
+        [control]="form.controls.name"
+        type="text"
+        label="Nombre"
+      ></app-custom-input>
+
+      <app-custom-input
+      class="ion-margin-top"
+        [control]="form.controls.brand"
+        type="text"
+        label="Marca"
+      ></app-custom-input>
+
+      <app-custom-input
+      class="ion-margin-top"
+        [control]="form.controls.category"
+        type="text"
+        label="Categoria"
+      ></app-custom-input>
+
+      <app-custom-input
+      class="ion-margin-top"
+        [control]="form.controls.price"
+        type="number"
+        label="Precio"
+      ></app-custom-input>
+
+      <app-custom-input
+      class="ion-margin-top"
+        [control]="form.controls.description"
+        type="text"
+        label="Descripcion"
+      ></app-custom-input>
+
+     
+
+      
+
+      <ion-button class="ion-margin-top" class="ion-margin" type="submit" [disabled]="form.invalid">
+        Agregar
+      </ion-button>
+    </form>
+</ion-content>
